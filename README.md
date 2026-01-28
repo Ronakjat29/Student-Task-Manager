@@ -11,14 +11,18 @@ Architecture: REST API + SPA
 Follow these exact steps to run the project locally:
 
 Step 1: Clone the repository
-git clone <your-repository-link>
+git clone https://github.com/Ronakjat29/Student-Task-Manager
+
 Step 2: Navigate to the project folder
 cd Task-Manager
+
 Step 3: Install Dependencies
 ``bash
 npm install
+
 Step 4: Start the Server
 node server.js
+
 Step 5: Open your Browser and visit
 http://localhost:3000
 
@@ -33,10 +37,15 @@ Frontend-backend interaction
 On the frontend, I deliberately used vanilla HTML, CSS, and JavaScript to showcase how a Single Page Application works internally, including asynchronous API calls, DOM manipulation, and UI updates without page reloads.
 
 What were the hardest bugs you faced, and how did you fix them?
+
 Backend – Cannot GET / Issue The server initially failed to load the frontend. This was resolved by properly serving static files using express.static(). This helped me understand how backend servers deliver frontend assets.
+
 Backend – Data Not Persisting Tasks were lost after server restarts because the JSON file was not handled safely. I fixed this by ensuring the file exists and is correctly read and written after each update.
+
 Frontend – addTask is not defined Error This error occurred due to incorrect JavaScript scoping when using inline event handlers. I resolved it by separating JavaScript into its own file and attaching event listeners properly.
+
 Frontend – UI Not Updating Dynamically New tasks were not appearing instantly. This was fixed by re-fetching task data after each successful API call, reinforcing SPA principles.
+
 These issues improved my understanding of debugging, asynchronous logic, and frontend-backend coordination.
 
 Solving these bugs helped me understand the importance of proper project structure, middleware usage, asynchronous programming, and frontend-backend coordination, which are essential skills in full stack development.
@@ -57,12 +66,16 @@ If given additional development time, this project can be extended in several me
 
 Task Management Enhancements:
 Introduce the ability to edit and delete tasks, allowing users to manage their homework list more flexibly and correct mistakes without re-adding tasks.
+
 Task Completion Tracking:
 Implement a task completion feature using checkboxes along with visual indicators (such as color changes or strikethrough text) to clearly distinguish completed and pending tasks.
+
 Database Integration:
 Replace the JSON file storage with a relational database (SQLite) or a NoSQL database (MongoDB) to improve data reliability, scalability, and support more complex queries.
+
 Responsive Design Improvements:
 Optimize the user interface for mobile and tablet devices to ensure a consistent and accessible experience across different screen sizes.
+
 User Authentication and Personalization:
 Add user authentication so that multiple users can securely log in and maintain their own individual task lists, making the application suitable for real-world usage.
 
